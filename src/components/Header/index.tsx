@@ -1,6 +1,6 @@
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from '@react-navigation/native'
 
-import { BackIcon, BackButton, Container, Logo } from "./styles";
+import { BackIcon, BackButton, Container, Logo } from './styles'
 import logoImg from '@assets/logo.png'
 
 interface HeaderProps {
@@ -16,12 +16,12 @@ export function Header({ showBackButton = false }: HeaderProps) {
 
   return (
     <Container>
+      {showBackButton && (
+        <BackButton onPress={handleGoBack}>
+          <BackIcon />
+        </BackButton>
+      )}
 
-    {showBackButton &&
-      <BackButton onPress={handleGoBack}>
-        <BackIcon />
-      </BackButton>}
-      
       <Logo source={logoImg} />
     </Container>
   )
